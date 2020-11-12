@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+  <script type="text/javascript">
+function check(){
+	var name = document.frm.uname;
+	var pass = document.frm.upass;
+	var repass= document.frm.urepass;
+	var mail= document.frm.umail;
+	var phn = document.frm.uphn;
+	
+	 var x = document.forms["frm"]["umail"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    
+	
+	if(name.value=="")
+	{
+		alert("Please enter name");
+			name.focus();
+		return false;
+	}
+	
+	else if(pass=="")
+	{
+	alert("Please enter Password");
+		pass.focus();
+		return false;
+	}
+	
+	else if(pass.value.length<=1)//(pass.value.length<=6)
+	{
+	alert("Password must be grater than 1 char");
+	pass.focus();
+	pass.select();
+	return false;
+	}
+	
+	else if((pass.value)!=(repass.value))
+	{
+	alert("Password Did not Match");
+		repass.focus();
+		repass.select();
+		return false;
+	}
+	
+	
+	else if(mail.value=="")
+	{
+	alert("Please enter Email id");
+		mail.focus();
+		return false;
+	}
+	
+	else if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+	
+	else if(phn.value.length!=10 || isNAN(phn.value))
+	{
+	alert("mobile number must be 10 digits only");
+	phn.focus();
+	phn.select();
+	return false;
+	}
+	
+	else{
+	}
+	
+}
+
+</script>
+
+</head>
+<div colspan="2"><a href="home.html" style = "color : green">Home</a> </div>
+<body bgcolor="rgb(33,345,100)">
+    
+<h1 style = "color : black; background : blue" align="center">Welcome to AOT CAB Service</h1>
+<h2 style = "color : aqua; background : black" align="center"><marquee>Hurry Up!! Grab exciting offers</marquee></h2>
+<form name="frm" method="post" action="Insert.java"> <!-- onsubmit = "return check()" -->
+
+<table align="center">
+
+<tr><th colspan="2"><b>User registration</b></th></tr>
+<tr><td>Enter Your Name  :</td><td><input type="text" name="uname"></td></tr>
+<tr><td>Enter Your UserID  :</td><td><input type="text" name="uid"></td></tr>
+<tr><td>Enter New Password  :</td><td><input type="password" name="upass"></td></tr>
+<tr><td>Enter again Password  :</td><td><input type="password" name="urepass"></td></tr>
+<tr><td>Enter Email :</td><td><input type="text" name="umail"></td></tr>
+<tr><td>Enter Phone Number :</td><td><input type="text" name="uphn"></td></tr>
+<tr><td colspan="2"><input type="submit" value="Register"></td></tr>
+
+</table>
+</form>
+</body>
+</html>

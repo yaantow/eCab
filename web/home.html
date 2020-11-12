@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <title>
+    Hire Cab
+  </title>
+  <script type="text/javascript">
+function check(){
+	
+	var ch = document.getElementsByName("chc");
+	for(var i=0;ch[i];i++)
+		if(ch[i].checked){
+			var sum=i*50;
+			break;
+		}
+	if(isNaN(sum))
+		 alert("Select a Car");
+	else{
+		ch = document.getElementsByName("chs");
+		for(i=0;ch[i];i++)
+			if(ch[i].checked){
+				var dis = parseInt(ch[i].value);
+				break;
+			}
+		if(isNaN(dis))
+			alert("Select a Source");
+		else{
+			ch = document.getElementsByName("chd");
+			for(i=0;ch[i];i++)
+				if(ch[i].checked){
+					var dis2 = parseInt(ch[i].value);
+					break;
+				}
+			if(isNaN(dis2))
+				alert("Select a Destination");
+			else{
+				dis = Math.abs(dis2-dis);
+				sum = sum + dis*30;
+				document.getElementById("bill").value=sum;
+				document.frm.action = "bill.jsp";
+			}
+	    }
+		
+	}
+    
+	
+	
+	
+}
+
+</script>
+  
+  <body bgcolor="green">
+  <center></center><h1 style = "color:blue ;background-color: aqua">Hire Cab with Low Cost</h1>
+ <h2  style=" colorrange; background-color: blue"> <marquee>  Have a Happy and Safe journey!!! </marquee></h1><hr/> 
+ <form name="frm" action="home.html"  onsubmit = "return check()" >
+ <input type="hidden" value="0" id="bill" name="bill">
+ <table  border="3" align="center" bgcolor="rgb(234,44,7)">
+<tr><th>Cab Brand Name</th><th>Select</th><th>Source</th><th>Select</th><th>Destination</th><th>Select</th></tr>
+<tr>
+  <td>Maruti</td>
+  <td><input type="radio" name="chc"></td>
+  <td>Howrah</td>
+  <td><input type="radio" name="chs" value="0"></td>
+  <td>Howrah</td>
+  <td><input type="radio" name="chd" value="0"></td>
+</tr>
+<tr>
+  <td>Swift</td>
+  <td><input type="radio" name="chc"></td>
+  <td>Bidhan Nagar</td>
+  <td><input type="radio" name="chs" value="25"></td>
+  <td>Bidhan Nagar</td>
+  <td><input type="radio" name="chd" value="25"></td>
+  </tr>
+<tr>
+  <td>Hundai</td>
+  <td><input type="radio" name="chc"></td>
+  <td>Saltlake</td>
+  <td><input type="radio" name="chs" value="20"></td>
+  <td>Saltlake</td>
+  <td><input type="radio" name="chd" value="20"></td>
+  </tr>
+<tr>
+  <td>Marshedies</td>
+  <td><input type="radio" name="chc"></td>
+  <td>Dum Dum</td>
+  <td><input type="radio" name="chs" value="30"></td>
+  <td>Dum Dum</td>
+  <td><input type="radio" name="chd" value="30"></td>
+  </tr>
+<tr>
+  <td>Audi</td>
+  <td><input type="radio" name="chc"></td>
+  <td>Sealdah</td>
+  <td><input type="radio" name="chs" value="15"></td>
+  <td>Sealdah</td>
+  <td><input type="radio" name="chd" value="15"></td>
+  </tr>
+<tr>
+  <td>BMW</td>
+  <td><input type="radio" name="chc"></td>
+  <td>Kolkata</td>
+  <td><input type="radio" name="chs" value="20"></td>
+  <td>Kolkata</td>
+  <td><input type="radio" name="chd" value="20"></td>
+  </tr>
+<tr><td colspan="6" align="right" ><input type="submit" value="Hire"></td></tr>
+</table>
+</form>
+
+  </body>
+</html>

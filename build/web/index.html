@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cablogin</title>
+<script type="text/javascript">
+function check(){
+	var id = document.frm.uid;
+	var pass = document.frm.upass;
+	
+	if(id.value=="")
+	{
+		alert("Please enter name");
+		id.focus();
+		return false;
+	}
+	
+	else if(pass.value=="")
+	{
+	alert("Please enter Password");
+		pass.focus();
+		return false;
+	}
+	
+	
+		else{
+	}
+	
+}
+
+</script>
+
+
+</head>
+<body bgcolor="aqua">
+<form name="frm" action="Login" onsubmit = "return check()">
+
+<table align="center">
+<tr><th colspan="2">login To AOT CAB</th></tr>
+<div colspan="2"><a href="home.html" style = "color : green">Home</a> </div>
+<h1 style = "color : black; background-color : blue;" align="center">Welcome to AOT CAB Service</h1>
+<h1  style = "color : rgb(166, 60, 239);background : black"><i><marquee>We are Happy to Serve You!! Please login if registered Or Register By the Hyperlink</marquee></i><h1>
+
+<tr><td>Enter login ID</td><td><input type="text" name="uid"></td></tr>
+<tr><td>Enter Password</td><td><input type="password" name="upass"></td></tr>
+<tr><td colspan="2"><input type="submit" value="login"></td></tr>
+<tr><td colspan="2"><a href="regis.html" style = "color : green">New User? Please Register</a> </td></tr>
+
+</table>
+
+</form>
+</body>
+</html>
